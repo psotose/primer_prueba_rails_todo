@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get  'todos/:id/edit', to: 'todos#edit', as: 'edit_todo'
   patch 'todos/:id', to: 'todos#update', as: 'todo'
   delete 'todos/:id', to: 'todos#destroy', as: 'delete_todo'
-  get 'todos/:id/complete', to: 'todos#complete', as: 'complete'
+  get 'todos/:id/complete', to: 'todos#complete', as: 'complete_todo'
   
 
   root 'todos#index'

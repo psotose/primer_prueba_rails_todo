@@ -35,7 +35,9 @@ before_action :set_params, only: [:show, :edit, :update, :destroy, :complete]
     end
 
     def complete
-
+        @todo.completed =! @todo.completed
+        @todo.save
+        redirect_to root_path
     end 
 
     def list

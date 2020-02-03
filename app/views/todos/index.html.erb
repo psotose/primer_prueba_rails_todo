@@ -1,23 +1,21 @@
-
-
-
 <div class="container"> 
-<div class="row">
-<% @todos.each do |todo| %>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Tarea:</h5>
-        <p class="card-text">
-        <%= todo.description %><br>
-        <%= todo.completed ? 'Completed' : 'No Completed' %></p>
-        <%= link_to  "Show To Do", show_todo_path(todo), class: 'btn btn-info' %>
-        <%= link_to  "Edit", edit_todo_path(todo), class: 'btn btn-info' %>
-        <%= link_to  "Delete", delete_todo_path(todo), class: 'btn btn-info', method: :delete, data: {confirm: 'Are you sure?'} %>
+  <div class="row">
+    <% @todos.each do |todo| %>
+      <div class="col-sm-6">
+         <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Tarea:</h5>
+              <p class="card-text">
+              <%= todo.description %><br>
+              <%= todo.completed ? 'Completed' : 'No Completed' %></p>
+              <%= link_to  "Complete", complete_todo_path(todo), class: 'btn btn-info' %>
+              <%= link_to  "Show To Do", show_todo_path(todo), class: 'btn btn-info' %>
+              <%= link_to  "Edit", edit_todo_path(todo), class: 'btn btn-info' %>
+              <%= link_to  "Delete", delete_todo_path(todo), class: 'btn btn-info', method: :delete, data: {confirm: 'Are you sure?'} %>
+            </div>
+          </div>
+          <br>
       </div>
+     <% end %> 
     </div>
-    <br>
   </div>
-  <% end %> 
-</div>
-</div>
