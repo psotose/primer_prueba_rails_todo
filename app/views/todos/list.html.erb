@@ -1,34 +1,26 @@
 
-<% @todo_completed.each do |todo| %>
-<div class="card">
 
-  <div class="card-body">
-    <%= todo.description %>
-    <%= todo.completed ? 'Completed' : 'No Completed' %>
-    <br>
-    <%= button_to  "Complete", method: :complete, class: 'btn btn-info' %>
-    <%= link_to  "Create To do", todos_new_path, class: 'btn btn-info' %>
-    <%= link_to  "Show To Do", show_todo_path(todo), class: 'btn btn-info' %>
-    <%= link_to  "Edit", edit_todo_path(todo), class: 'btn btn-info' %>
-    <%= link_to  "Delete", delete_todo_path(todo), class: 'btn btn-info', method: :delete, data: {confirm: 'Are you sure?'} %>
-  </div>
- 
-</div>
- <% end %>
+     <div class="row">
+        <div class="col-6">
+          <h3>No Completed</h3>
+            <% @todo_uncompleted.each do |todo| %>
+                <div class="card">
+                    <div class="card-body">
+                    <%= todo.description %><br>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <br>
+        <div class="col-6">
+            <h3>Completed</h3>
+            <% @todo_completed.each do |todo| %>
+                <div class="card">
+                    <div class="card-body">
+                        <%= todo.description %><br>
+                    </div>
+                </div>
+           <% end %>
+        </div>
+    </div>
 
- <% @todo_uncompleted.each do |todo| %>
-<div class="card">
-
-  <div class="card-body">
-    <%= todo.description %>
-    <%= todo.completed ? 'Completed' : 'No Completed' %>
-    <br>
-    <%= button_to  "Complete", method: :complete, class: 'btn btn-info' %>
-    <%= link_to  "Create To do", todos_new_path, class: 'btn btn-info' %>
-    <%= link_to  "Show To Do", show_todo_path(todo), class: 'btn btn-info' %>
-    <%= link_to  "Edit", edit_todo_path(todo), class: 'btn btn-info' %>
-    <%= link_to  "Delete", delete_todo_path(todo), class: 'btn btn-info', method: :delete, data: {confirm: 'Are you sure?'} %>
-  </div>
- 
-</div>
- <% end %>

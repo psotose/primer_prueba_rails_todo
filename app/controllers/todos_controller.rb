@@ -39,14 +39,14 @@ before_action :set_params, only: [:show, :edit, :update, :destroy, :complete]
     end 
 
     def list
-        @todo_completed = Todo.where(completed: 'Completed')
-        @todo_uncompleted = Todo.where(completed: 'No Completed')
+        @todo_completed = Todo.where(completed: true)
+        @todo_uncompleted = Todo.where(completed: false)
     end
 
     private
 
     def todo_params
-        params.require(:todo).permit(:complete, :description)
+        params.require(:todo).permit(:completed, :description)
     end
 
     def set_params
