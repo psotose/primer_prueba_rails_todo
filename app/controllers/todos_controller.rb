@@ -1,5 +1,5 @@
 class TodosController < ApplicationController 
-before_action :set_params, only: [:show, :edit, :update, :destroy]
+before_action :set_params, only: [:show, :edit, :update, :destroy, :complete]
     def index
         @todos = Todo.all
 
@@ -35,7 +35,13 @@ before_action :set_params, only: [:show, :edit, :update, :destroy]
     end
 
     def complete
+
     end 
+
+    def list
+        @todo_completed = Todo.where(completed: 'Completed')
+        @todo_uncompleted = Todo.where(completed: 'No Completed')
+    end
 
     private
 
