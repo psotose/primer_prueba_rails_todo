@@ -1,0 +1,10 @@
+<h1>This is what you have to do</h1>
+
+<div class="card">
+  <div class="card-body">
+    <%= @todo.description %>
+    <%= @todo.completed ? 'Completed' : 'No Comppleted' %>
+    <br>
+    <%= link_to  "Back", root_path, class: 'btn btn-info' %>
+</div>
+</div>

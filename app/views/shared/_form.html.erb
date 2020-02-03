@@ -1,0 +1,14 @@
+<div class="container">
+<%= form_with(model: @todo, local: true) do |f| %>
+    
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+<br>
+        <%= f.label :completed %>
+        <%= f.check_box :completed %>
+<br>
+        <%= f.submit  "Save", class: 'btn btn-info' %>
+   
+
+<% end %>
+ </div>
